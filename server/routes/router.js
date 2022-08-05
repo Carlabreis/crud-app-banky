@@ -2,17 +2,26 @@ const express = require('express');
 // const app = express(); => this would create a new app. do this instead:
 const route = express.Router()
 
-route.get('/', (req, res) => {
-  res.render('index');
-})
+const services = require('../services/render');
 
-route.get('/add-question', (req, res) => {
-  res.render('add_question');
-})
 
-route.get('/update-question', (req, res) => {
-  res.render('update_question');
-})
+/**
+* @description Root Route
+* @method GET/
+*/
+route.get('/', services.homeRoutes);
+
+/**
+* @description Add Question Route
+* @method GET/add_question
+*/
+route.get('/add-question', services.add_question);
+
+/**
+* @description Update Question Route
+* @method GET/update_question
+*/
+route.get('/update-question', services.update_question);
 
 
 module.exports = route
