@@ -3,6 +3,7 @@ const express = require('express');
 const route = express.Router()
 
 const services = require('../services/render');
+const controller = require('../controller/controller');
 
 
 /**
@@ -22,6 +23,13 @@ route.get('/add-question', services.add_question);
 * @method GET/update_question
 */
 route.get('/update-question', services.update_question);
+
+//API
+route.post('/api/questions', controller.create);
+route.get('/api/questions', controller.find);
+route.put('/api/questions/:id', controller.update);
+route.delete('/api/questions/:id', controller.delete);
+
 
 
 module.exports = route
