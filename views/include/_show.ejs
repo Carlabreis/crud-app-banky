@@ -1,15 +1,17 @@
+<% for(var i=0; i<questions.length; i++){ %>
 <tr>
-  <td>e.g. id</td>
-  <td>Give me an example of the project or initiative that you started on your own. It can be a non-business one. What prompted you to get started?</td>
-  <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-  <td>e.g. Technical</td>
-  <td>e.g. Confident</td>
+  <td><%= i + 1 %></td>
+  <td><%= questions[i].question %></td>
+  <td><%= questions[i].answer %></td>
+  <td><%= questions[i].topic %></td>
+  <td><%= questions[i].status %></td>
   <td>
-    <a href="/update-question" class="btn border-shadow update">
+    <a href="/update-question?id=<%=questions[i]._id%>" class="btn border-shadow update">
       <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
     </a>
-    <a class="btn border-shadow delete">
+    <a class="btn border-shadow delete" data-id=<%=questions[i]._id%>>
       <span class="text-gradient"><i class="fas fa-times"></i></span>
     </a>
   </td>
 </tr>
+<% } %>

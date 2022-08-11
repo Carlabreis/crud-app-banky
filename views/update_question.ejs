@@ -19,36 +19,36 @@
       <div class="new_question">
         <div class="form-group">
           <label for="question" class="text-light">Question</label>
-          <input type="hidden" name="id" value="">
-          <input type="text" name="question" value="" placeholder="Type the banky question here...">
+          <input type="hidden" name="id" value="<%= question._id %>">
+          <input type="text" name="question" value="<%= question.question %>" placeholder="Type the banky question here...">
         </div>
 
         <div class="form-group">
           <label for="answer" class="text-light">Answer</label>
-          <input type="text" name="answer" value="" placeholder="Type your answer here...">
+          <input type="text" name="answer" value="<%= question.answer %>" placeholder="Type your answer here...">
         </div>
 
         <div class="form-group">
           <label for="topic" class="text-light">Topic</label>
           <div class="radio inline">
-            <input type="radio" name="topic" value="Technical">
-            <label for="topic" class="text-light">Technical</label>
+            <input type="radio" id="radio-2" name="topic" value="Technical" <%= question.topic == 'Technical' ? 'checked' : '' %>>
+            <label for="radio-2" class="text-light">Technical</label>
           </div>
           <div class="radio inline">
-            <input type="radio" name="topic" value="Behavioral">
-            <label for="topic" class="text-light">Behavioral</label>
+            <input type="radio" id="radio-3" name="topic" value="Behavioral" <%= question.topic == 'Behavioral' ? 'checked' : '' %>>
+            <label for="radio-3" class="text-light">Behavioral</label>
           </div>
         </div>
 
         <div class="form-group">
           <label for="status" class="text-light">Status</label>
           <div class="radio inline">
-            <input type="radio" name="status" value="Confident">
-            <label for="status" class="text-light">Confident</label>
+            <input type="radio" id="radio-4" name="status" value="Confident" <%= question.status == 'Confident' ? 'checked' : '' %>>
+            <label for="radio-4" class="text-light">Confident</label>
           </div>
           <div class="radio inline">
-            <input type="radio" name="status" value="NeedMorePractice">
-            <label for="status" class="text-light">Need More Practice</label>
+            <input type="radio" id="radio-5" name="status" value="NeedMorePractice" <%= question.status == 'NeedMorePractice' ? 'checked' : '' %>>
+            <label for="radio-5" class="text-light">Need More Practice</label>
           </div>
         </div>
 
