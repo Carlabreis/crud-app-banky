@@ -8,7 +8,7 @@ var schema = new mongoose.Schema({
   },
   answer : {
     type : String,
-    required : true
+    required : false
   },
   topic : String,
   status : String
